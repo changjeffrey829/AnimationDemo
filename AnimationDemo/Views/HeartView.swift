@@ -10,18 +10,16 @@ import UIKit
 
 class HeartView: UIView {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .yellow
-//        clipsToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let pulsatingLayer = createHeartShapeLayer(frame: frame, strokeColor: .blue, fillColor: .clear)
-//        pulsatingLayer.anchorPoint = CGPoint(x: frame.width / 2, y: frame.height / 2)
+        let pulsatingLayer = createHeartShapeLayer(frame: frame, strokeColor: .red, fillColor: .red)
+        pulsatingLayer.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         
         layer.addSublayer(pulsatingLayer)
         animatePulsatingLayer(layer: pulsatingLayer)
@@ -35,7 +33,6 @@ class HeartView: UIView {
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         animation.autoreverses = true
         animation.repeatCount = Float.infinity
-        print("where's the anchor point: \(layer.anchorPoint)")
         layer.add(animation, forKey: "pulsing")
     }
     
@@ -44,7 +41,7 @@ class HeartView: UIView {
         let hearthPath = UIBezierPath(heartIn: frame)
         layer.path = hearthPath.cgPath
         layer.strokeColor = strokeColor.cgColor
-        layer.lineWidth = 20
+        layer.lineWidth = 10
         layer.fillColor = fillColor.cgColor
         layer.lineCap = CAShapeLayerLineCap.round
         return layer

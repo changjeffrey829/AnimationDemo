@@ -22,11 +22,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let loadAnimationNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: LoadAnimationVC())
         
-        let dickPicNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: ViewController())
-        
         let circularBarVC = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: CircularBarVC())
         
-        return [countDownNavController, loadAnimationNavController, dickPicNavController, circularBarVC]
+        return [countDownNavController, loadAnimationNavController, circularBarVC]
     }
     
     func templateNavController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController = UIViewController()) -> UINavigationController {

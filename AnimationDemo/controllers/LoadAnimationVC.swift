@@ -14,10 +14,8 @@ class LoadAnimationVC: UIViewController, URLSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
         setupHeartView()
     }
-    
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         let percentage = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
@@ -32,7 +30,6 @@ class LoadAnimationVC: UIViewController, URLSessionDelegate {
     
     fileprivate func setupHeartView() {
         view.addSubview(heartView)
-//        heartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         heartView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         heartView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         heartView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -47,16 +44,5 @@ class LoadAnimationVC: UIViewController, URLSessionDelegate {
         let downloadTask = urlSession.downloadTask(with: url)
         downloadTask.resume()
     }
-    
-//    fileprivate func createCircleShapeLayer(strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
-//        let layer = CAShapeLayer()
-//        let circularPath = UIBezierPath(arcCenter: .zero, radius: 50, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-//        layer.path = circularPath.cgPath
-//        layer.strokeColor = strokeColor.cgColor
-//        layer.lineWidth = 20
-//        layer.fillColor = fillColor.cgColor
-//        layer.lineCap = CAShapeLayerLineCap.round
-//        return layer
-//    }
     
 }
