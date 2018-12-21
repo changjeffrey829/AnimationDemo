@@ -8,7 +8,7 @@
 import UIKit
 
 
-class LoadAnimationVC: UIViewController, URLSessionDelegate {
+class PulsatingHeartVC: UIViewController, URLSessionDelegate {
     
     let heartView = HeartView()
     
@@ -17,16 +17,10 @@ class LoadAnimationVC: UIViewController, URLSessionDelegate {
         setupHeartView()
     }
     
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        let percentage = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
-        
-        DispatchQueue.main.async {
-            //            self.percentageLabel.text = "\(Int(percentage * 100))%"
-            //            self.shapeLayer.strokeEnd = percentage
-        }
-        
-        print(percentage)
+    override func viewDidAppear(_ animated: Bool) {
+        heartView.animatePulsatingLayer()
     }
+    
     
     fileprivate func setupHeartView() {
         view.addSubview(heartView)
@@ -44,5 +38,4 @@ class LoadAnimationVC: UIViewController, URLSessionDelegate {
         let downloadTask = urlSession.downloadTask(with: url)
         downloadTask.resume()
     }
-    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040920D021CC81590024F164 /* CircularBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040920CF21CC81590024F164 /* CircularBarView.swift */; };
 		04C8DBA021B97FBF000B9930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DB9F21B97FBF000B9930 /* AppDelegate.swift */; };
 		04C8DBA221B97FBF000B9930 /* CountDownDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBA121B97FBF000B9930 /* CountDownDemoController.swift */; };
 		04C8DBA521B97FBF000B9930 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C8DBA321B97FBF000B9930 /* Main.storyboard */; };
@@ -15,12 +16,13 @@
 		04C8DBB221B97FF8000B9930 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBB121B97FF8000B9930 /* MainTabBarController.swift */; };
 		04C8DBB621BDE8FB000B9930 /* CircularBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBB521BDE8FB000B9930 /* CircularBarVC.swift */; };
 		04C8DBB821BDEC28000B9930 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBB721BDEC28000B9930 /* NetworkManager.swift */; };
-		04C8DBBA21BDF4DC000B9930 /* LoadAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBB921BDF4DC000B9930 /* LoadAnimationVC.swift */; };
+		04C8DBBA21BDF4DC000B9930 /* PulsatingHeartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBB921BDF4DC000B9930 /* PulsatingHeartVC.swift */; };
 		04C8DBBE21C06C99000B9930 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBBD21C06C99000B9930 /* HeartView.swift */; };
-		04C8DBC121C36305000B9930 /* BezierpathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBC021C36305000B9930 /* BezierpathExtension.swift */; };
+		04C8DBC121C36305000B9930 /* HeartBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8DBC021C36305000B9930 /* HeartBezierPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040920CF21CC81590024F164 /* CircularBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarView.swift; sourceTree = "<group>"; };
 		04C8DB9C21B97FBF000B9930 /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C8DB9F21B97FBF000B9930 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C8DBA121B97FBF000B9930 /* CountDownDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownDemoController.swift; sourceTree = "<group>"; };
@@ -31,9 +33,9 @@
 		04C8DBB121B97FF8000B9930 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		04C8DBB521BDE8FB000B9930 /* CircularBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarVC.swift; sourceTree = "<group>"; };
 		04C8DBB721BDEC28000B9930 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		04C8DBB921BDF4DC000B9930 /* LoadAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAnimationVC.swift; sourceTree = "<group>"; };
+		04C8DBB921BDF4DC000B9930 /* PulsatingHeartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingHeartVC.swift; sourceTree = "<group>"; };
 		04C8DBBD21C06C99000B9930 /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
-		04C8DBC021C36305000B9930 /* BezierpathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierpathExtension.swift; sourceTree = "<group>"; };
+		04C8DBC021C36305000B9930 /* HeartBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBezierPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040920CE21CC7F6E0024F164 /* CountDownController */ = {
+			isa = PBXGroup;
+			children = (
+				04C8DBA121B97FBF000B9930 /* CountDownDemoController.swift */,
+			);
+			path = CountDownController;
+			sourceTree = "<group>";
+		};
 		04C8DB9321B97FBF000B9930 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +78,10 @@
 			children = (
 				04C8DB9F21B97FBF000B9930 /* AppDelegate.swift */,
 				04C8DBB721BDEC28000B9930 /* NetworkManager.swift */,
-				04C8DBBF21C362DA000B9930 /* Extensions */,
-				04C8DBBC21C06C83000B9930 /* Views */,
-				04C8DBBB21BF0A31000B9930 /* controllers */,
+				04C8DBB121B97FF8000B9930 /* MainTabBarController.swift */,
+				04C8DBBC21C06C83000B9930 /* PulsatingHeartController */,
+				040920CE21CC7F6E0024F164 /* CountDownController */,
+				04C8DBBB21BF0A31000B9930 /* CircularLoadingBar */,
 				04C8DBA321B97FBF000B9930 /* Main.storyboard */,
 				04C8DBA621B97FC1000B9930 /* Assets.xcassets */,
 				04C8DBA821B97FC1000B9930 /* LaunchScreen.storyboard */,
@@ -79,31 +90,23 @@
 			path = AnimationDemo;
 			sourceTree = "<group>";
 		};
-		04C8DBBB21BF0A31000B9930 /* controllers */ = {
+		04C8DBBB21BF0A31000B9930 /* CircularLoadingBar */ = {
 			isa = PBXGroup;
 			children = (
-				04C8DBB121B97FF8000B9930 /* MainTabBarController.swift */,
-				04C8DBA121B97FBF000B9930 /* CountDownDemoController.swift */,
-				04C8DBB921BDF4DC000B9930 /* LoadAnimationVC.swift */,
 				04C8DBB521BDE8FB000B9930 /* CircularBarVC.swift */,
+				040920CF21CC81590024F164 /* CircularBarView.swift */,
 			);
-			path = controllers;
+			path = CircularLoadingBar;
 			sourceTree = "<group>";
 		};
-		04C8DBBC21C06C83000B9930 /* Views */ = {
+		04C8DBBC21C06C83000B9930 /* PulsatingHeartController */ = {
 			isa = PBXGroup;
 			children = (
 				04C8DBBD21C06C99000B9930 /* HeartView.swift */,
+				04C8DBB921BDF4DC000B9930 /* PulsatingHeartVC.swift */,
+				04C8DBC021C36305000B9930 /* HeartBezierPath.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		04C8DBBF21C362DA000B9930 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				04C8DBC021C36305000B9930 /* BezierpathExtension.swift */,
-			);
-			path = Extensions;
+			path = PulsatingHeartController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +182,13 @@
 			files = (
 				04C8DBB821BDEC28000B9930 /* NetworkManager.swift in Sources */,
 				04C8DBBE21C06C99000B9930 /* HeartView.swift in Sources */,
-				04C8DBC121C36305000B9930 /* BezierpathExtension.swift in Sources */,
+				04C8DBC121C36305000B9930 /* HeartBezierPath.swift in Sources */,
 				04C8DBA221B97FBF000B9930 /* CountDownDemoController.swift in Sources */,
 				04C8DBA021B97FBF000B9930 /* AppDelegate.swift in Sources */,
 				04C8DBB621BDE8FB000B9930 /* CircularBarVC.swift in Sources */,
 				04C8DBB221B97FF8000B9930 /* MainTabBarController.swift in Sources */,
-				04C8DBBA21BDF4DC000B9930 /* LoadAnimationVC.swift in Sources */,
+				04C8DBBA21BDF4DC000B9930 /* PulsatingHeartVC.swift in Sources */,
+				040920D021CC81590024F164 /* CircularBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

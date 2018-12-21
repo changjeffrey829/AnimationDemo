@@ -20,11 +20,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let countDownNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: CountDownDemoController())
         
-        let loadAnimationNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: LoadAnimationVC())
+        let pulsatingHeartVCNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: PulsatingHeartVC())
         
         let circularBarVC = templateNavController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: CircularBarVC())
         
-        return [countDownNavController, loadAnimationNavController, circularBarVC]
+        return [countDownNavController, pulsatingHeartVCNavController, circularBarVC]
     }
     
     func templateNavController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController = UIViewController()) -> UINavigationController {

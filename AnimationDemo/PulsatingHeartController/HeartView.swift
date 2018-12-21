@@ -9,6 +9,7 @@
 import UIKit
 
 class HeartView: UIView {
+    var pulsatingLayer = CAShapeLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,22 +19,29 @@ class HeartView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let pulsatingLayer = createHeartShapeLayer(frame: frame, strokeColor: .red, fillColor: .red)
+        pulsatingLayer = createHeartShapeLayer(frame: frame, strokeColor: .red, fillColor: .red)
         pulsatingLayer.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         
         layer.addSublayer(pulsatingLayer)
-        animatePulsatingLayer(layer: pulsatingLayer)
+        animatePulsatingLayer()
+//        animatePulsatingLayer(layer: pulsatingLayer)
         
     }
     
-    fileprivate func animatePulsatingLayer(layer: CAShapeLayer) {
+    func animatePulsatingLayer() {
+        let animation = PulsatingAnimation()
+        pulsatingLayer.add(animation, forKey: "pulsing")
+    }
+    
+    fileprivate func PulsatingAnimation() -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.toValue = 1.5
         animation.duration = 0.8
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         animation.autoreverses = true
         animation.repeatCount = Float.infinity
-        layer.add(animation, forKey: "pulsing")
+//        layer.add(animation, forKey: "pulsing")
+        return animation
     }
     
     fileprivate func createHeartShapeLayer(frame: CGRect, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
